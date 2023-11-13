@@ -1,0 +1,15 @@
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/bin/Debug/net7.0/mpbenchmark
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/bin/Debug/net7.0/mpbenchmark.deps.json
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/bin/Debug/net7.0/mpbenchmark.runtimeconfig.json
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/bin/Debug/net7.0/mpbenchmark.dll
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/bin/Debug/net7.0/mpbenchmark.pdb
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/CSharpBenchmark.csproj.AssemblyReference.cache
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/CSharpBenchmark.GeneratedMSBuildEditorConfig.editorconfig
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/CSharpBenchmark.AssemblyInfoInputs.cache
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/CSharpBenchmark.AssemblyInfo.cs
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/CSharpBenchmark.csproj.CoreCompileInputs.cache
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/mpbenchmark.dll
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/refint/mpbenchmark.dll
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/mpbenchmark.pdb
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/CSharpBenchmark.genruntimeconfig.cache
+/home/realtime/Documents/Part_D_Modules/Individual_Project/mpbenchmark/src_mpbenchmark/CSharpBenchmark/obj/Debug/net7.0/ref/mpbenchmark.dll

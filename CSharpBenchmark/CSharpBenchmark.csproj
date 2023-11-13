@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>CSharpBenchmark</RootNamespace>
+    <AssemblyName>mpbenchmark</AssemblyName>
+    <Nullable>enable</Nullable>
+    <!-- Define constants can still be included if needed -->
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <!-- Optional: Choose specific configurations for Debug/Release if required -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <!-- No need to specify platform as .NET 7 is platform-agnostic -->
+
+  <!-- Remove explicit references to system assemblies, they are included by the SDK -->
+  <!-- Remove the explicit <Compile Include="" /> items, as the new SDK format includes them implicitly -->
+
+  <!-- If you have any NuGet package references, they should be included here -->
+  <ItemGroup>
+    <!-- Example: <PackageReference Include="Newtonsoft.Json" Version="13.0.1" /> -->
+  </ItemGroup>
+
+  <!-- If you have any other special files to include like app.config or others, include them here -->
+  <ItemGroup>
+    <!-- Example: <None Include="app.config" CopyToOutputDirectory="PreserveNewest" /> -->
+  </ItemGroup>
+
+  <!-- It is not necessary to import Microsoft.CSharp.targets, as it's included by the SDK -->
+</Project>
