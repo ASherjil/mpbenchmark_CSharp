@@ -6,64 +6,72 @@ using System.Text;
 
 namespace CSharpBenchmark
 {
-	class mpbenchmark
-	{
-		//number of threads
-		public static int NUM_THREADS=configuration_data.NUM_THREADS;
-		private static Thread[] threads=new Thread[NUM_THREADS];
-		private static Stopwatch watch = new Stopwatch();
+class mpbenchmark
+{
+    // Number of threads
+    public static int NUM_THREADS = configuration_data.NUM_THREADS; // This will be updated based on the command line argument
+    private static Thread[] threads; // Delay initialization until NUM_THREADS is known
+    private static Stopwatch watch = new Stopwatch();
 
-		//arrays, store input and output data
-		public static double[,]? inputArray;
-		public static double[,]? outputArray;	
-		public static int LineCount=0;
+    // Arrays, store input and output data
+    public static double[,]? inputArray;
+    public static double[,]? outputArray;
+    public static int LineCount = 0;
 
-		public static void Main (string[] args)
-		{
-			//Console.WriteLine ("Multi Processor Benchmark C# version\n");
-			//Console.WriteLine("Number Of Processors: {0}", NUM_THREADS);
-			int engine=3;
-			if(args.Length>0)
-			{
-				if(string.Equals(args[0],"1")){
-					engine=1;
-					//Console.WriteLine("Turbojet is selected");
-				}
-				else if(string.Equals(args[0],"2")){
-					engine=2;
-					//Console.WriteLine("Afterburner  is selected");
-				}
-				else if(string.Equals(args[0],"3")){
-					engine=3;
-					//Console.WriteLine("Turbofan  is selected");
-				}
-				else{
-					//Console.WriteLine("Turbofan (default) is selected");
-				}
-			}
-			else
-			{
-				Console.WriteLine("Turbofan (default) is selected");
-			}
-			configuration_data.engine = engine;
+    public static void Main(string[] args)
+    {
+        //Console.WriteLine("Multi Processor Benchmark C# version\n");
+        int engine = 3;
 
-			InitializeArray ();
+        // Parse engine type from the first argument
+        if(args.Length > 0)
+        {
+            engine = args[0] switch
+            {
+                "1" => 1,
+                "2" => 2,
+                "3" => 3,
+                _ => engine
+            };
+            //Console.WriteLine($"Engine selected: {engine}");
+        }
 
-			watch.Start ();
+        // Parse number of threads from the second argument
+        if(args.Length > 1)
+        {
+            if(int.TryParse(args[1], out int parsedThreads) && parsedThreads > 0)
+            {
+                NUM_THREADS = parsedThreads;
+            }
+            else
+            {
+                Console.WriteLine("Invalid number of threads specified, using default.");
+            }
+        }
 
-			for (int i=0; i<NUM_THREADS; i++) {
-				Worker workerObject = new Worker(i);
-				threads[i] = new Thread(workerObject.run);
-				threads[i].Start();
-			}
-			for (int i=0; i<NUM_THREADS; i++) {
-				threads [i].Join ();
-			}
+        // Now that we know NUM_THREADS, initialize the threads array
+        threads = new Thread[NUM_THREADS];
 
-			watch.Stop ();
-			printResult ();
-		}
+        configuration_data.engine = engine;
 
+        InitializeArray();
+
+        watch.Start();
+
+        for (int i = 0; i < NUM_THREADS; i++)
+        {
+            Worker workerObject = new Worker(i);
+            threads[i] = new Thread(workerObject.run);
+            threads[i].Start();
+        }
+        for (int i = 0; i < NUM_THREADS; i++)
+        {
+            threads[i].Join();
+        }
+
+        watch.Stop();
+        printResult();
+    	}
 
 		public static void InitializeArray(){
 
